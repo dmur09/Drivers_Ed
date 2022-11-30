@@ -14,23 +14,24 @@ public class KeyBoardInput : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.W))
             {
-                Car.MoveManually(new Vector2(0f, 1f));
-            }
-
-            if (Input.GetKey(KeyCode.A))
-            {
-                Car.MoveManually(new Vector2(-1f, 0f));
-            }
-
-            if (Input.GetKey(KeyCode.D))
-            {
                 Car.MoveManually(new Vector2(1f, 0f));
             }
-
-            if (Input.GetKey(KeyCode.S))
+            // rotate
+            if (Input.GetKey(KeyCode.A))
+            {
+                Car.MoveManually(new Vector2(0f, 1f));
+            }
+            // rotate
+            if (Input.GetKey(KeyCode.D))
             {
                 Car.MoveManually(new Vector2(0f, -1f));
-            }
+            }\
+            
+            // might not need this
+            // if (Input.GetKey(KeyCode.S))
+            // {
+            //     Car.MoveManually(new Vector2(-1f, 0f));
+            // }
         }
     }
 }

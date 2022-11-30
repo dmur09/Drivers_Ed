@@ -38,25 +38,9 @@ public class Car : MonoBehaviour
 
     public void Move(Vector2 direction)
     {
-        FaceCorrectDirection(direction);
         CarSpriteRenderer.transform.Translate(new Vector3(
             direction.x * GameParameters.CarMoveAmount,
             direction.y * GameParameters.CarMoveAmount, 
             0f));
-    }
-
-    
-    private void FaceCorrectDirection(Vector2 direction)
-    {
-        if (direction.x > 0)
-        {
-            CarSpriteRenderer.flipX = false;
-        }
-        else if (direction.x < 0)
-        {
-            CarSpriteRenderer.flipX = true;
-
-        }
-        // make sprite face upwards and downwards
     }
 }
