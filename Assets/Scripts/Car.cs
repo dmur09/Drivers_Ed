@@ -43,4 +43,53 @@ public class Car : MonoBehaviour
             direction.y * GameParameters.CarMoveAmount, 
             0f));
     }
+    
+    /* public void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == “StopSign”)
+        {
+            StopAtSign(); 
+        }
+    
+        if (col.gameObject.tag == “SilverCoin”)
+        {
+            ScoreKeeper.Add(1);
+        }
+
+        if (col.gameObject.tag == “GoldCoin”)
+        {
+            ScoreKeeper.Add(5);
+        }
+    
+        if (col.gameObject.tag == “Construction”)
+        {
+            StopAtConstruction(); 
+        }
+    
+        if (col.gameObject.tag == “Pedestrian”)
+        {
+            GoToJail(); 
+        }
+
+        if (col.gameObject.tag == “Beer”)
+        {
+            AutoStraight(); 
+        }
+
+        if (col.gameObject.tag == “Mushroom”)
+        {
+            ReplenishDamageGauge(); 
+        }
+    
+        if (col.gameObject.tag == “PotLeaf”)
+        {
+            SlowDown(); 
+        }
+
+        if (col.gameObject.tag == “RedBull”)
+        {
+            SpeedUp(); 
+        }
+        Destroy(col.gameObject);
+    } */
 }
