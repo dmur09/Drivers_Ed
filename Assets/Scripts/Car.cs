@@ -48,7 +48,8 @@ public class Car : MonoBehaviour
     {
         if (col.gameObject.tag == “StopSign”)
         {
-            StopAtSign(); 
+            StopAtSign();
+            DamageGauge.Minus(1); 
         }
     
         if (col.gameObject.tag == “SilverCoin”)
@@ -63,12 +64,14 @@ public class Car : MonoBehaviour
     
         if (col.gameObject.tag == “Construction”)
         {
-            StopAtConstruction(); 
+            StopAtConstruction();
+            DamageGauge.Minus(1); 
         }
     
         if (col.gameObject.tag == “Pedestrian”)
         {
-            GoToJail(); 
+            GoToJail();
+            DamageGauge.Minus(5); 
         }
 
         if (col.gameObject.tag == “Beer”)
@@ -89,6 +92,11 @@ public class Car : MonoBehaviour
         if (col.gameObject.tag == “RedBull”)
         {
             SpeedUp(); 
+        }
+        
+        if (col.gameObject.tag == “GuardRail”)
+        {
+            DamageGauge.Minus(1); 
         }
         Destroy(col.gameObject);
     } */
