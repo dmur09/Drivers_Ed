@@ -270,7 +270,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 916605154}
-  - component: {fileID: 916605153}
+  - component: {fileID: 916605155}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -278,19 +278,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &916605153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 916605152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c5143d5cef53496cbdd66faf2df0797, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GameTimer: {fileID: 555761416}
 --- !u!4 &916605154
 Transform:
   m_ObjectHideFlags: 0
@@ -306,6 +293,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &916605155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916605152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b5ef3111235747b5ab618df66b086c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI: {fileID: 0}
+  GameTimer: {fileID: 555761416}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,7 +420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12684c20738cc41aca45085056c8dba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Car: {fileID: 1889416455}
+  Car: {fileID: 1889416457}
 --- !u!4 &1327209819
 Transform:
   m_ObjectHideFlags: 0
@@ -512,10 +513,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1889416456}
-  - component: {fileID: 1889416455}
   - component: {fileID: 1889416454}
   - component: {fileID: 1889416453}
   - component: {fileID: 1889416452}
+  - component: {fileID: 1889416457}
   m_Layer: 0
   m_Name: car
   m_TagString: Untagged
@@ -622,19 +623,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1889416455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1889416451}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e44273779b25421297ab0dc42927777, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CarSpriteRenderer: {fileID: 1889416452}
 --- !u!4 &1889416456
 Transform:
   m_ObjectHideFlags: 0
@@ -650,3 +638,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &1889416457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889416451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e44273779b25421297ab0dc42927777, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CarSpriteRenderer: {fileID: 1889416452}

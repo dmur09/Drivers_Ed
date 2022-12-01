@@ -16,19 +16,14 @@ public class KeyBoardInput : MonoBehaviour
             {
                 Car.MoveManually(new Vector2(1f, 0f));
             }
-
-            // rotate
             if (Input.GetKey(KeyCode.A))
             {
                 Car.transform.Rotate(0f, 0f, 5f);
-                // rotate
             }
-
             if (Input.GetKey(KeyCode.D))
             {
                 Car.transform.Rotate(0f, 0f, -5f);
             }
-
             if (Input.GetKey(KeyCode.S))
             {
                 Car.MoveManually(new Vector2(-1f, 0f));

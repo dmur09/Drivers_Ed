@@ -9,7 +9,7 @@ public class Pedestrian : MonoBehaviour
     public Crosswalk Crosswalk;
     public void Update()
     {
-        if (Crosswalk.isCrosswalk = true)
+        if (Crosswalk.isCrosswalk == true)
         {
             PlaceOnCrosswalk();
             MoveOnCrosswalk();
@@ -17,7 +17,7 @@ public class Pedestrian : MonoBehaviour
     }
     public void PlaceOnCrosswalk()
     {
-        Vector3 location = SpriteTools.RandomCrosswalkLocation();
+        Vector3 location = RandomCrosswalkLocation();
         Instantiate(ObjectPrefab, location, Quaternion.identity);
     }
     public void MoveOnCrosswalk()
@@ -25,5 +25,10 @@ public class Pedestrian : MonoBehaviour
         
     }
 
-    
+    public Vector3 RandomCrosswalkLocation()
+    {
+        return Vector3.back;
+    }
+
+
 }
