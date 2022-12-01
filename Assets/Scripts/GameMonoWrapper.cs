@@ -4,20 +4,13 @@ using UnityEngine;
 
 public class GameMonoWrapper : MonoBehaviour
 {
-    //public UI UI;
-
+    public UI UI;
     public GameTimer GameTimer;
-    
-    // Start is called before the first frame update
     void Start()
     {
-        Game.Initiliaze(/* UI, */ GameTimer);
-        
-        //remove this line whenever you add the start button
-        Game.StartGame();
+        Game.Initialize(UI, GameTimer);
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (Game.GameJustEnded())
@@ -26,10 +19,8 @@ public class GameMonoWrapper : MonoBehaviour
         }
     }
 
-    /*
-     public void StartGame()
+    public void StartGame()
     {
         Game.StartGame();
     }
-    */
 }
