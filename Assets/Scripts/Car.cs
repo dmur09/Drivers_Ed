@@ -7,7 +7,7 @@ public class Car : MonoBehaviour
     public SpriteRenderer CarSpriteRenderer;
     public float acceleration = 0.0f;
     public float deceleration = 0.0f;
-
+    public ParticleSystem Exhaust;
     void Update()
     {
         if (HasGameJustEnded())

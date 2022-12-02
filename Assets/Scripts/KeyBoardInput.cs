@@ -42,28 +42,31 @@ public class KeyBoardInput : MonoBehaviour
             {
                 if (Input.GetKey(KeyCode.A))
                 {
-                    Car.transform.Rotate(0f, 0f, 1.5f);
+                    Car.transform.Rotate(0f, 0f, 1f);
+                    Car.Exhaust.Play();
                 }
             
                 if (Input.GetKey(KeyCode.D))
                 {
-                    Car.transform.Rotate(0f, 0f, -1.5f);
+                    Car.transform.Rotate(0f, 0f, -1f);
+                    Car.Exhaust.Play();
                 }
             }
-            
+
             if (Car.deceleration != 0.0f)
             {
                 if (Input.GetKey(KeyCode.A))
                 {
-                    Car.transform.Rotate(0f, 0f, 1.5f);
+                    Car.transform.Rotate(0f, 0f, 1f);
+                    Car.Exhaust.Play();
                 }
             
                 if (Input.GetKey(KeyCode.D))
                 {
-                    Car.transform.Rotate(0f, 0f, -1.5f);
+                    Car.transform.Rotate(0f, 0f, -1f);
+                    Car.Exhaust.Play();
                 }
             }
-            
         }
     }
 }
