@@ -8,9 +8,15 @@ public class PickUps : MonoBehaviour
     private int coinsCollected; //number of coins collected
     private int points;
     private int laps;
+    public GameObject Beer;
 
 
-    public void RedBull()
+    public void AutoStraight()
+    {
+        //Auto-straight for 2 secs
+    }
+
+    /*public void RedBull()
     {
         //increase carSpeed for 2 seconds
     }
@@ -35,11 +41,6 @@ public class PickUps : MonoBehaviour
         //decrease carSpeed for 2 secs
     }
 
-    public void Beer()
-    {
-        //Auto-strafe for 2 secs
-    }
-
     public void LapComplete()
     {
         //if the car crosses starting line, increment laps.
@@ -59,5 +60,5 @@ public class PickUps : MonoBehaviour
     public void StopSign()
     {
         //if player encounters stop sign, CarSpeed is reduced to 0 for 2 seconds at the crosswalk and all movement is disabled.
-    }
+    }*/
 }
