@@ -24,7 +24,7 @@ public class KeyBoardInput : MonoBehaviour
             {
                 Car.acceleration = 0.0f;
             }
-            
+
             if (Input.GetKey(KeyCode.S))
             {
                 Car.MoveManually(new Vector3(GameParameters.CarMoveAmount * Car.deceleration, 0f, 0f));
@@ -38,16 +38,32 @@ public class KeyBoardInput : MonoBehaviour
                 Car.deceleration = 0.0f;
             }
             
-            // these two rotation controls inside of the forward/backward controls kept crashing the game
-            if (Input.GetKey(KeyCode.A))
+            if (Car.acceleration != 0.0f)
             {
-                Car.transform.Rotate(0f, 0f, 1.5f);
+                if (Input.GetKey(KeyCode.A))
+                {
+                    Car.transform.Rotate(0f, 0f, 1.5f);
+                }
+            
+                if (Input.GetKey(KeyCode.D))
+                {
+                    Car.transform.Rotate(0f, 0f, -1.5f);
+                }
             }
             
-            if (Input.GetKey(KeyCode.D))
+            if (Car.deceleration != 0.0f)
             {
-                Car.transform.Rotate(0f, 0f, -1.5f);
+                if (Input.GetKey(KeyCode.A))
+                {
+                    Car.transform.Rotate(0f, 0f, 1.5f);
+                }
+            
+                if (Input.GetKey(KeyCode.D))
+                {
+                    Car.transform.Rotate(0f, 0f, -1.5f);
+                }
             }
+            
         }
     }
 }
