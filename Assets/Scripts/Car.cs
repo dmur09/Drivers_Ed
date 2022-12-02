@@ -5,6 +5,9 @@ using UnityEngine;
 public class Car : MonoBehaviour
 {
     public SpriteRenderer CarSpriteRenderer;
+    public float acceleration = 0.0f;
+    public float deceleration = 0.0f;
+
     void Update()
     {
         if (HasGameJustEnded())
@@ -27,7 +30,7 @@ public class Car : MonoBehaviour
 
     public void Reset()
     {
-        
+        acceleration = 0.0f;
     }
     
     public void MoveManually(Vector2 direction)
@@ -39,9 +42,7 @@ public class Car : MonoBehaviour
     public void Move(Vector2 direction)
     {
         CarSpriteRenderer.transform.Translate(new Vector3(
-            direction.x * GameParameters.CarMoveAmount,
-            direction.y * GameParameters.CarMoveAmount, 
-            0f));
+            direction.x, direction.y, 0f));
     }
     
     /* public void OnCollisionEnter2D(Collision2D col)
