@@ -45,7 +45,7 @@ public class UI : MonoBehaviour
 //
 //     public void ShowDamageGuage(string damage)
 //     {
-//         DamageGaugeText.text = "Remaining Damage: " + damage;
+//         DamageGaugeText.text = "Hits Remaining: " + damage;
 //     }
 //
 //     public void ShowTime(string time)
