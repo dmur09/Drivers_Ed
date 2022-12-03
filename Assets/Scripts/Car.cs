@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,9 @@ public class Car : MonoBehaviour
     public float acceleration = 0.0f;
     public float deceleration = 0.0f;
     public ParticleSystem Exhaust;
+
+    public bool isDrunk = false;
+
     void Update()
     {
         if (HasGameJustEnded())
@@ -35,19 +39,33 @@ public class Car : MonoBehaviour
     
     public void MoveManually(Vector2 direction)
     {
+        if (isDrunk == true)
+            return;
         Move(direction);
     }
 
 
     public void Move(Vector2 direction)
     {
-        CarSpriteRenderer.transform.Translate(new Vector3(
-            direction.x, direction.y, 0f));
+        CarSpriteRenderer.transform.Translate(new Vector2(
+            direction.x, direction.y));
     }
     
-    /* public void OnCollisionEnter2D(Collision2D col)
+    public void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == “StopSign”)
+        if (col.gameObject.tag == "Beer")
+        {
+            AutoStraight();
+            Destroy(col.gameObject);
+            StartCoroutine(GetSober());
+        }
+        if (col.gameObject.tag == "RedBull")
+        {
+            SpeedUp();
+            Destroy(col.gameObject);
+            StartCoroutine(WaitForSpeedBuffToEnd());
+        }
+        /*if (col.gameObject.tag == “StopSign”)
         {
             StopAtSign();
             DamageGauge.Minus(1); 
@@ -75,11 +93,6 @@ public class Car : MonoBehaviour
             DamageGauge.Minus(5); 
         }
 
-        if (col.gameObject.tag == “Beer”)
-        {
-            AutoStraight(); 
-        }
-
         if (col.gameObject.tag == “Mushroom”)
         {
             ReplenishDamageGauge(); 
@@ -90,15 +103,45 @@ public class Car : MonoBehaviour
             SlowDown(); 
         }
 
-        if (col.gameObject.tag == “RedBull”)
-        {
-            SpeedUp(); 
-        }
+        
         
         if (col.gameObject.tag == “GuardRail”)
         {
             DamageGauge.Minus(1); 
         }
-        Destroy(col.gameObject);
-    } */
+        Destroy(col.gameObject); */
+    }
+
+    private void AutoStraight()
+    {
+        isDrunk = true;
+        acceleration = 5f;
+    }
+
+    IEnumerator GetSober()
+    {
+        yield return new WaitForSeconds(2);
+        isDrunk = false;
+    }
+
+    private void SpeedUp()
+    {
+        acceleration = 60f;
+    }
+    IEnumerator WaitForSpeedBuffToEnd()
+    {
+        yield return new WaitForSeconds(2);
+        if (acceleration > GameParameters.MaxForwardSpeed)
+            acceleration = GameParameters.MaxForwardSpeed;
+    }
+
+    private void FixedUpdate()
+    {
+        if (isDrunk == true)
+        {
+            Move(new Vector2(0.5f, 0f));
+        }
+    }
+
+
 }

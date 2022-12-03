@@ -2,25 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickUps : MonoBehaviour
+public class PickUps : KeyBoardInput
 {
     private int carSpeed; // speed of the car
     private int coinsCollected; //number of coins collected
     private int points;
     private int laps;
-    public GameObject Beer;
+    public GameObject pickUp;
+    public Car car;
 
 
     public void AutoStraight()
     {
         //Auto-straight for 2 secs
+        
     }
 
-    /*public void RedBull()
+    public void SpeedUp()
     {
-        //increase carSpeed for 2 seconds
+        Car.acceleration = 2.0f;//increase carSpeed for 2 seconds
     }
-
+    /*
     public void Mushroom()
     {
         //replenish damage gauge

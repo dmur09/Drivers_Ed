@@ -12,34 +12,39 @@ public class KeyBoardInput : MonoBehaviour
     {
         if (Game.IsRunning())
         {
-            if (Input.GetKey(KeyCode.W))
+            if (Input.GetKey(KeyCode.W) && Car.deceleration > -0.07f)
             {
-                Car.MoveManually(new Vector3(GameParameters.CarMoveAmount * Car.acceleration, 0f, 0f));
+                Car.MoveManually(new Vector2(GameParameters.CarMoveAmount * Car.acceleration, 0f));
                 if (Car.acceleration < GameParameters.MaxForwardSpeed)
                 {
                     Car.acceleration += 0.035f;
                 }
             }
-            else
+            else if(Car.acceleration > 0)
             {
-                Car.acceleration = 0.0f;
+                Car.MoveManually(new Vector2(GameParameters.CarMoveAmount * Car.acceleration, 0f));
+                Car.acceleration -= 0.07f;
+                
             }
 
-            if (Input.GetKey(KeyCode.S))
+            if (Input.GetKey(KeyCode.S) && Car.acceleration < 0.07f)
             {
-                Car.MoveManually(new Vector3(GameParameters.CarMoveAmount * Car.deceleration, 0f, 0f));
+                Car.MoveManually(new Vector2(GameParameters.CarMoveAmount * Car.deceleration, 0f));
                 if (Car.deceleration > GameParameters.MaxReverseSpeed)
                 {
                     Car.deceleration -= 0.035f;
                 }
             }
-            else
+            else if(Car.deceleration < 0)
             {
-                Car.deceleration = 0.0f;
+                Car.MoveManually(new Vector2(GameParameters.CarMoveAmount * Car.deceleration, 0f));
+                Car.deceleration += 0.07f;
             }
             
-            if (Car.acceleration != 0.0f)
+            if (Car.acceleration >= 0.035f)
             {
+                if (Car.isDrunk == true)
+                    return;
                 if (Input.GetKey(KeyCode.A))
                 {
                     Car.transform.Rotate(0f, 0f, 1f);
@@ -53,8 +58,10 @@ public class KeyBoardInput : MonoBehaviour
                 }
             }
 
-            if (Car.deceleration != 0.0f)
+            if (Car.deceleration <= -0.035f)
             {
+                if (Car.isDrunk == true)
+                    return;
                 if (Input.GetKey(KeyCode.A))
                 {
                     Car.transform.Rotate(0f, 0f, 1f);
