@@ -12,16 +12,7 @@ public class PickUps : KeyBoardInput
     public Car car;
 
 
-    public void AutoStraight()
-    {
-        //Auto-straight for 2 secs
-        
-    }
-
-    public void SpeedUp()
-    {
-        Car.acceleration = 2.0f;//increase carSpeed for 2 seconds
-    }
+    
     /*
     public void Mushroom()
     {

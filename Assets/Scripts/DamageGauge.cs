@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class DamageGauge
 {
-    private static int damage = 10;
+    public static int damage = 10;
     
     public static void Minus(int amount)
     {

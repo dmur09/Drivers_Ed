@@ -10,9 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 861482008410014147}
   - component: {fileID: 861482008410014144}
-  - component: {fileID: 4403995136594031178}
   - component: {fileID: 3870711324750093050}
-  - component: {fileID: 2174712371852943924}
   - component: {fileID: -1924700958948283059}
   m_Layer: 0
   m_Name: RedBull
@@ -88,18 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4403995136594031178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 861482008410014174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd2c1335fb89946669b0c1b639812ee2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &3870711324750093050
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -126,21 +112,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4, y: 11.5}
   m_EdgeRadius: 0
---- !u!114 &2174712371852943924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 861482008410014174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 465ccd23bb7dd428d863cfe72be18b48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Car: {fileID: 0}
-  pickUp: {fileID: 861482008410014174}
-  car: {fileID: 0}
 --- !u!50 &-1924700958948283059
 Rigidbody2D:
   serializedVersion: 4

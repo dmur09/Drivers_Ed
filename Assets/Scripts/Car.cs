@@ -56,15 +56,26 @@ public class Car : MonoBehaviour
         if (col.gameObject.tag == "Beer")
         {
             AutoStraight();
-            Destroy(col.gameObject);
-            StartCoroutine(GetSober());
+            StartCoroutine(WaitToGetSober());
         }
         if (col.gameObject.tag == "RedBull")
         {
             SpeedUp();
-            Destroy(col.gameObject);
             StartCoroutine(WaitForSpeedBuffToEnd());
         }
+
+        if (col.gameObject.tag == "Pot Leaf")
+        {
+            SlowDown();
+            StartCoroutine(WaitToSpeedUpAgain());
+        }
+
+        if (col.gameObject.tag == "Mushroom")
+        {
+            DamageGauge.Replenish();
+            print(DamageGauge.damage);
+        }
+
         /*if (col.gameObject.tag == “StopSign”)
         {
             StopAtSign();
@@ -92,33 +103,36 @@ public class Car : MonoBehaviour
             GoToJail();
             DamageGauge.Minus(5); 
         }
-
-        if (col.gameObject.tag == “Mushroom”)
-        {
-            ReplenishDamageGauge(); 
-        }
     
-        if (col.gameObject.tag == “PotLeaf”)
-        {
-            SlowDown(); 
-        }
-
-        
         
         if (col.gameObject.tag == “GuardRail”)
         {
             DamageGauge.Minus(1); 
-        }
-        Destroy(col.gameObject); */
+        } */
+        Destroy(col.gameObject);
+    }
+
+    private void SlowDown()
+    {
+        GameParameters.MaxForwardSpeed = 9.0f;
+        if (acceleration > 18.0f)
+            acceleration = 18.0f;
+        acceleration /= 2;
+    }
+
+    IEnumerator WaitToSpeedUpAgain()
+    {
+        yield return new WaitForSeconds(2);
+        GameParameters.MaxForwardSpeed = 18.0f;
+
     }
 
     private void AutoStraight()
     {
         isDrunk = true;
-        acceleration = 5f;
     }
 
-    IEnumerator GetSober()
+    IEnumerator WaitToGetSober()
     {
         yield return new WaitForSeconds(2);
         isDrunk = false;

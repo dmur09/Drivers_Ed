@@ -7,5 +7,6 @@ public static class GameParameters
     public static float CarMoveAmount = .01f;
     public static float MaxForwardSpeed = 18.0f;
     public static float MaxReverseSpeed = -10.0f;
+    public static float TurnSpeedScale = 16.0f;
 
 }

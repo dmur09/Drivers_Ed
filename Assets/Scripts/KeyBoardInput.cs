@@ -20,7 +20,7 @@ public class KeyBoardInput : MonoBehaviour
                     Car.acceleration += 0.035f;
                 }
             }
-            else if(Car.acceleration > 0)
+            else if(Car.acceleration > 0) //changed so car decelerates on key release instead of stopping
             {
                 Car.MoveManually(new Vector2(GameParameters.CarMoveAmount * Car.acceleration, 0f));
                 Car.acceleration -= 0.07f;
@@ -43,17 +43,17 @@ public class KeyBoardInput : MonoBehaviour
             
             if (Car.acceleration >= 0.035f)
             {
-                if (Car.isDrunk == true)
+                if (Car.isDrunk == true) //disables key input if isDrunk is true
                     return;
                 if (Input.GetKey(KeyCode.A))
                 {
-                    Car.transform.Rotate(0f, 0f, 1f);
+                    Car.transform.Rotate(0f, 0f, Car.acceleration/GameParameters.TurnSpeedScale); //changed it so turn speed scales with acceleration
                     Car.Exhaust.Play();
                 }
             
                 if (Input.GetKey(KeyCode.D))
                 {
-                    Car.transform.Rotate(0f, 0f, -1f);
+                    Car.transform.Rotate(0f, 0f, -Car.acceleration/GameParameters.TurnSpeedScale);
                     Car.Exhaust.Play();
                 }
             }
@@ -64,13 +64,13 @@ public class KeyBoardInput : MonoBehaviour
                     return;
                 if (Input.GetKey(KeyCode.A))
                 {
-                    Car.transform.Rotate(0f, 0f, 1f);
+                    Car.transform.Rotate(0f, 0f, -Car.deceleration/GameParameters.TurnSpeedScale);
                     Car.Exhaust.Play();
                 }
             
                 if (Input.GetKey(KeyCode.D))
                 {
-                    Car.transform.Rotate(0f, 0f, -1f);
+                    Car.transform.Rotate(0f, 0f, Car.deceleration/GameParameters.TurnSpeedScale);
                     Car.Exhaust.Play();
                 }
             }

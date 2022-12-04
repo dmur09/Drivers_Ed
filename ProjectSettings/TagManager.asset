@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Beer
   - RedBull
+  - Pot Leaf
+  - Mushroom
   layers:
   - Default
   - TransparentFX
