@@ -76,6 +76,13 @@ public class Car : MonoBehaviour
             print(DamageGauge.damage);
         }
 
+        if (col.gameObject.tag == "Pedestrian")
+        {
+            //GoToJail();
+            DamageGauge.Minus(5);
+            return;
+        }
+
         /*if (col.gameObject.tag == “StopSign”)
         {
             StopAtSign();
@@ -98,12 +105,6 @@ public class Car : MonoBehaviour
             DamageGauge.Minus(1); 
         }
     
-        if (col.gameObject.tag == “Pedestrian”)
-        {
-            GoToJail();
-            DamageGauge.Minus(5); 
-        }
-    
         
         if (col.gameObject.tag == “GuardRail”)
         {
@@ -114,7 +115,7 @@ public class Car : MonoBehaviour
 
     private void SlowDown()
     {
-        GameParameters.MaxForwardSpeed = 9.0f;
+        GameParameters.MaxForwardSpeed /= 2;
         if (acceleration > 18.0f)
             acceleration = 18.0f;
         acceleration /= 2;

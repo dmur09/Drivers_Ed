@@ -8,6 +8,7 @@ TagManager:
   - RedBull
   - Pot Leaf
   - Mushroom
+  - Pedestrian
   layers:
   - Default
   - TransparentFX
