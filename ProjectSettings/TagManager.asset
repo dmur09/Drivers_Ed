@@ -10,6 +10,7 @@ TagManager:
   - Mushroom
   - Pedestrian
   - Gold Coin
+  - Cone
   layers:
   - Default
   - TransparentFX
