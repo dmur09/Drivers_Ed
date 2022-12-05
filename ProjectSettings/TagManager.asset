@@ -9,6 +9,7 @@ TagManager:
   - Pot Leaf
   - Mushroom
   - Pedestrian
+  - Gold Coin
   layers:
   - Default
   - TransparentFX
