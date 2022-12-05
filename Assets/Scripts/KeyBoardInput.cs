@@ -47,14 +47,30 @@ public class KeyBoardInput : MonoBehaviour
                     return;
                 if (Input.GetKey(KeyCode.A))
                 {
+<<<<<<< Updated upstream
                     Car.transform.Rotate(0f, 0f, Car.acceleration/GameParameters.TurnSpeedScale); //changed it so turn speed scales with acceleration
                     Car.Exhaust.Play();
+=======
+                    Car.transform.Rotate(0f, 0f, 1f);
+                    if (Car.acceleration >= 5.0f)
+                    {
+                        Car.Exhaust.Play();
+                    }
+>>>>>>> Stashed changes
                 }
             
                 if (Input.GetKey(KeyCode.D))
                 {
+<<<<<<< Updated upstream
                     Car.transform.Rotate(0f, 0f, -Car.acceleration/GameParameters.TurnSpeedScale);
                     Car.Exhaust.Play();
+=======
+                    Car.transform.Rotate(0f, 0f, -1f);
+                    if (Car.acceleration >= 5.0f)
+                    {
+                        Car.Exhaust.Play();
+                    }
+>>>>>>> Stashed changes
                 }
             }
 
@@ -64,14 +80,30 @@ public class KeyBoardInput : MonoBehaviour
                     return;
                 if (Input.GetKey(KeyCode.A))
                 {
+<<<<<<< Updated upstream
                     Car.transform.Rotate(0f, 0f, -Car.deceleration/GameParameters.TurnSpeedScale);
                     Car.Exhaust.Play();
+=======
+                    Car.transform.Rotate(0f, 0f, 1f);
+                    if (Car.deceleration >= 5.0f)
+                    {
+                        Car.Exhaust.Play();
+                    }
+>>>>>>> Stashed changes
                 }
             
                 if (Input.GetKey(KeyCode.D))
                 {
+<<<<<<< Updated upstream
                     Car.transform.Rotate(0f, 0f, Car.deceleration/GameParameters.TurnSpeedScale);
                     Car.Exhaust.Play();
+=======
+                    Car.transform.Rotate(0f, 0f, -1f);
+                    if (Car.deceleration >= 5.0f)
+                    {
+                        Car.Exhaust.Play();
+                    }
+>>>>>>> Stashed changes
                 }
             }
         }
