@@ -19,6 +19,11 @@ public class Sounds : MonoBehaviour
     {
         audioSource = GameObject.FindGameObjectWithTag("AudioSource").GetComponent<AudioSource>();
     }
+    
+    private void OnCollisionEnter(Collision collision)
+    {
+        audioSource.PlayOneShot(HitGuardrailSound);
+    }
 
     // Update is called once per frame
     void Update()
