@@ -57,30 +57,34 @@ public class Car : MonoBehaviour
         {
             AutoStraight();
             StartCoroutine(WaitToGetSober());
+            Destroy(col.gameObject);
         }
         if (col.gameObject.tag == "RedBull")
         {
             SpeedUp();
             StartCoroutine(WaitForSpeedBuffToEnd());
+            Destroy(col.gameObject);
         }
 
         if (col.gameObject.tag == "Pot Leaf")
         {
             SlowDown();
             StartCoroutine(WaitToSpeedUpAgain());
+            Destroy(col.gameObject);
         }
 
         if (col.gameObject.tag == "Mushroom")
         {
             DamageGauge.Replenish();
             print(DamageGauge.damage);
+            Destroy(col.gameObject);
         }
 
         if (col.gameObject.tag == "Pedestrian")
         {
             //GoToJail();
             DamageGauge.Minus(5);
-            return;
+            Destroy(col.gameObject);
         }
 
         /*if (col.gameObject.tag == “StopSign”)
@@ -110,7 +114,7 @@ public class Car : MonoBehaviour
         {
             DamageGauge.Minus(1); 
         } */
-        Destroy(col.gameObject);
+
     }
 
     private void SlowDown()
