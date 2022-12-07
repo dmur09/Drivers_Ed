@@ -14,64 +14,42 @@ public class KeyBoardInput : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.W) && Car.deceleration > -0.07f) //controls for moving forward
             {
-                if (Input.GetKey(KeyCode.S))
-                {
-                    if (Car.acceleration > 0.0f)
-                    {
-                        Car.acceleration -= 0.4f;
-                    }
-
-                    if (Car.acceleration <= 0.0f)
-                    {
-                        if (Car.deceleration > GameParameters.MaxReverseSpeed)
-                        {
-                            Car.deceleration -= 0.035f;
-                        }
-                        Car.MoveManually(new Vector2(GameParameters.CarMoveAmount * Car.deceleration, 0f));
-                    }
-                }
                 Car.MoveManually(new Vector2(GameParameters.CarMoveAmount * Car.acceleration, 0f));
                 if (Car.acceleration < GameParameters.MaxForwardSpeed)
                 {
-                    Car.acceleration += 0.035f;
+                    Car.acceleration += 0.04f;
                 }
+            }
+            else if (Car.acceleration > 0 && Input.GetKey(KeyCode.S))
+            {
+                Car.MoveManually(new Vector2(GameParameters.CarMoveAmount * Car.acceleration, 0f));
+                Car.acceleration -= 0.5f;
             }
             else if(Car.acceleration > 0) //changed so car decelerates on key release instead of stopping
             {
                 Car.MoveManually(new Vector2(GameParameters.CarMoveAmount * Car.acceleration, 0f));
-                Car.acceleration -= 0.07f;
+                Car.acceleration -= 0.06f;
                 
             }
 
             
             if (Input.GetKey(KeyCode.S) && Car.acceleration < 0.07f) //controls for reversing
             {
-                if (Input.GetKey(KeyCode.W))
-                {
-                    if (Car.deceleration > 0.0f)
-                    {
-                        Car.deceleration -= 0.4f;
-                    }
-
-                    if (Car.deceleration <= 0.0f)
-                    {
-                        if (Car.acceleration > GameParameters.MaxReverseSpeed)
-                        {
-                            Car.acceleration -= 0.035f;
-                        }
-                        Car.MoveManually(new Vector2(GameParameters.CarMoveAmount * Car.acceleration, 0f));
-                    }
-                }
                 Car.MoveManually(new Vector2(GameParameters.CarMoveAmount * Car.deceleration, 0f));
                 if (Car.deceleration > GameParameters.MaxReverseSpeed)
                 {
-                    Car.deceleration -= 0.035f;
+                    Car.deceleration -= 0.04f;
                 }
+            }
+            else if (Car.deceleration < 0 && Input.GetKey(KeyCode.W))
+            {
+                Car.MoveManually(new Vector2(GameParameters.CarMoveAmount * Car.acceleration, 0f));
+                Car.deceleration += 0.5f;
             }
             else if(Car.deceleration < 0)
             {
                 Car.MoveManually(new Vector2(GameParameters.CarMoveAmount * Car.deceleration, 0f));
-                Car.deceleration += 0.07f;
+                Car.deceleration += 0.06f;
             }
             
             if (Car.acceleration >= 0.035f) // for turning when going forward
