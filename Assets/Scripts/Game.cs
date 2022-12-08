@@ -42,7 +42,7 @@ public static class Game
     {
         isRunning = false;
         GameTimer.StopTimer();
-        //UI.ShowGameOverScreen();
+        UI.ShowGameOverScreen();
     }
 
     public static bool IsRunning()

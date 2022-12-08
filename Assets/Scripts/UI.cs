@@ -11,6 +11,7 @@ public class UI : MonoBehaviour
     public Text ScoreText;
     public Text TimeText;
     public Text DamageGaugeText;
+    public Text FinalScoreText;
     public GameTimer GameTimer;
 
     public void Update()
@@ -30,6 +31,7 @@ public class UI : MonoBehaviour
     {
         CanvasGroupDisplayer.Hide(StartScreenCanvasGroup);
         CanvasGroupDisplayer.Show(GameOverScreenCanvasGroup);
+        ShowFinalScore(ScoreKeeper.GetScore());
     }
     public void HideStartAndGameOverScreen()
     {
@@ -50,6 +52,11 @@ public class UI : MonoBehaviour
     public void ShowTime(string time)
     {
         TimeText.text = "Time: " + time;
+    }
+
+    public void ShowFinalScore(string score)
+    {
+        FinalScoreText.text = "Final Score: " + score;
     }
 }
 

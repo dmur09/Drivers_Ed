@@ -14,7 +14,7 @@ public class GameMonoWrapper : MonoBehaviour
     
     void Update()
     {
-        if (Game.GameJustEnded())
+        if (Game.GameJustEnded() || DamageGauge.damage <= 0)
         {
             Game.EndGame();
         }
