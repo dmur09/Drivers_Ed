@@ -140,7 +140,7 @@ public class Car : MonoBehaviour
     IEnumerator WaitToSpeedUpAgain()
     {
         yield return new WaitForSeconds(2);
-        GameParameters.MaxForwardSpeed = 11.0f;
+        GameParameters.MaxForwardSpeed = 7.0f;
 
     }
 
@@ -151,7 +151,7 @@ public class Car : MonoBehaviour
 
     IEnumerator WaitToGetSober()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         isDrunk = false;
     }
 
@@ -161,7 +161,7 @@ public class Car : MonoBehaviour
     }
     IEnumerator WaitForSpeedBuffToEnd()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
         if (acceleration > GameParameters.MaxForwardSpeed)
             acceleration = GameParameters.MaxForwardSpeed;
     }

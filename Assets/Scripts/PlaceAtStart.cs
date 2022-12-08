@@ -6,7 +6,7 @@ public class PlaceAtStart : MonoBehaviour
 {
     public void Place(SpriteRenderer Mushroom1, SpriteRenderer Mushroom2, SpriteRenderer Mushroom3, SpriteRenderer Beer1, SpriteRenderer Beer2, 
         SpriteRenderer Beer3, SpriteRenderer PotLeaf1, SpriteRenderer PotLeaf2, SpriteRenderer PotLeaf3, SpriteRenderer Redbull1, SpriteRenderer Redbull2, 
-        SpriteRenderer Redbull3, SpriteRenderer GoldCoin1, SpriteRenderer GoldCoin2, SpriteRenderer GoldCoin3, SpriteRenderer GoldCoin4, SpriteRenderer GoldCoin5, SpriteRenderer SilverCoin, SpriteRenderer Crosswalk,
+        SpriteRenderer Redbull3, SpriteRenderer GoldCoin1, SpriteRenderer GoldCoin2, SpriteRenderer GoldCoin3, SpriteRenderer GoldCoin4, SpriteRenderer GoldCoin5, SpriteRenderer SilverCoin, 
         List<SpriteRenderer> Shapes)
     {
         PlaceItemRandomlyInRandomShape(Mushroom1, Shapes);
@@ -27,7 +27,7 @@ public class PlaceAtStart : MonoBehaviour
         PlaceItemRandomlyInRandomShape(GoldCoin4, Shapes);
         PlaceItemRandomlyInRandomShape(GoldCoin5, Shapes);
         PlaceItemRandomlyInRandomShape(SilverCoin, Shapes);
-        PlaceItemInCenterOfRandomShape(Crosswalk, Shapes);
+        //PlaceItemInCenterOfRandomShape(Crosswalk, Shapes);
     }   
 
     public void PlaceItemRandomlyInRandomShape(SpriteRenderer objectToPlace, List<SpriteRenderer> shapesToPlaceIn)
