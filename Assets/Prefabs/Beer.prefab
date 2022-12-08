@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6380222676717768091}
   - component: {fileID: 6380222676717768088}
-  - component: {fileID: 2148574958573322812}
   - component: {fileID: -7695730979329315130}
+  - component: {fileID: -2454911663727331256}
   m_Layer: 0
   m_Name: Beer
   m_TagString: Beer
@@ -86,27 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &2148574958573322812
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6380222676717768070}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!60 &-7695730979329315130
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -138,3 +117,24 @@ PolygonCollider2D:
       - {x: 0.22, y: -0.29999998}
       - {x: 0.28, y: -0.26999998}
       - {x: 0.28, y: 0.19}
+--- !u!50 &-2454911663727331256
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6380222676717768070}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
