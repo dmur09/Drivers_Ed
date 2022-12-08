@@ -131,16 +131,16 @@ public class Car : MonoBehaviour
 
     private void SlowDown()
     {
+        if (acceleration > GameParameters.MaxForwardSpeed)
+            acceleration = GameParameters.MaxForwardSpeed;
         GameParameters.MaxForwardSpeed /= 2;
-        if (acceleration > 18.0f)
-            acceleration = 18.0f;
         acceleration /= 2;
     }
 
     IEnumerator WaitToSpeedUpAgain()
     {
         yield return new WaitForSeconds(2);
-        GameParameters.MaxForwardSpeed = 7.0f;
+        GameParameters.MaxForwardSpeed = 28.0f;
 
     }
 
@@ -157,7 +157,7 @@ public class Car : MonoBehaviour
 
     private void SpeedUp()
     {
-        acceleration = 20f;
+        acceleration = 60.0f;
     }
     IEnumerator WaitForSpeedBuffToEnd()
     {
