@@ -9,6 +9,7 @@ public class Car : MonoBehaviour
     public float acceleration = 0.0f;
     public float deceleration = 0.0f;
     public ParticleSystem Exhaust;
+    public Sounds Sounds;
 
     public bool isDrunk = false;
 
@@ -57,6 +58,7 @@ public class Car : MonoBehaviour
         {
             AutoStraight();
             StartCoroutine(WaitToGetSober());
+            //Sounds.PlayBeerSound();
             Destroy(col.gameObject);
         }
         if (col.gameObject.tag == "RedBull")
@@ -86,6 +88,12 @@ public class Car : MonoBehaviour
             DamageGauge.Minus(5);
             Destroy(col.gameObject);
         }
+        
+        if (col.gameObject.tag == "GuardRail")
+        {
+            DamageGauge.Minus(1);
+            Sounds.PlayHitGaurdrailSound();
+        }
 
         /*if (col.gameObject.tag == “StopSign”)
         {
@@ -109,11 +117,7 @@ public class Car : MonoBehaviour
             DamageGauge.Minus(1); 
         }
     
-        
-        if (col.gameObject.tag == “GuardRail”)
-        {
-            DamageGauge.Minus(1); 
-        } */
+         */
 
     }
 

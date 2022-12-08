@@ -20,7 +20,7 @@ public class Sounds : MonoBehaviour
         audioSource = GameObject.FindGameObjectWithTag("AudioSource").GetComponent<AudioSource>();
     }
     
-    private void OnCollisionEnter(Collision collision)
+    public void PlayHitGaurdrailSound()
     {
         audioSource.PlayOneShot(HitGuardrailSound);
     }

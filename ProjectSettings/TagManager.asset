@@ -11,6 +11,7 @@ TagManager:
   - Pedestrian
   - Gold Coin
   - Cone
+  - GuardRail
   layers:
   - Default
   - TransparentFX

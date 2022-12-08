@@ -3609,6 +3609,7 @@ MonoBehaviour:
   acceleration: 0
   deceleration: 0
   Exhaust: {fileID: 2014587301}
+  Sounds: {fileID: 0}
   isDrunk: 0
 --- !u!60 &1889416458
 PolygonCollider2D:
