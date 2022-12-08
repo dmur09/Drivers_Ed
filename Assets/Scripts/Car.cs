@@ -56,9 +56,9 @@ public class Car : MonoBehaviour
     {
         if (col.gameObject.tag == "Beer")
         {
-            //AutoStraight();
+            AutoStraight();
             Sounds.PlayBeerSound();
-            //StartCoroutine(WaitToGetSober());
+            StartCoroutine(WaitToGetSober());
             Destroy(col.gameObject);
         }
         if (col.gameObject.tag == "RedBull")
@@ -102,14 +102,14 @@ public class Car : MonoBehaviour
         if (col.gameObject.tag == "Silver Coin")
         {
             Sounds.PlayCoinSound();
-            ScoreKeeper.Add(1);
+            ScoreKeeper.Add(5);
             Destroy(col.gameObject);
         }
         
         if (col.gameObject.tag == "Gold Coin")
         {
             Sounds.PlayCoinSound();
-            ScoreKeeper.Add(5);
+            ScoreKeeper.Add(1);
             Destroy(col.gameObject);
         }
 
@@ -157,11 +157,11 @@ public class Car : MonoBehaviour
 
     private void SpeedUp()
     {
-        acceleration = 30f;
+        acceleration = 20f;
     }
     IEnumerator WaitForSpeedBuffToEnd()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.1f);
         if (acceleration > GameParameters.MaxForwardSpeed)
             acceleration = GameParameters.MaxForwardSpeed;
     }
@@ -170,7 +170,7 @@ public class Car : MonoBehaviour
     {
         if (isDrunk == true)
         {
-            Move(new Vector2(0.5f, 0f));
+            Move(new Vector2(0.3f, 0f));
         }
     }
 

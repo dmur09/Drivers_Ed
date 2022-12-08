@@ -17,6 +17,7 @@ public class GameMonoWrapper : MonoBehaviour
         if (Game.GameJustEnded() || DamageGauge.damage <= 0)
         {
             Game.EndGame();
+            MiniMap.SetActive(false);
         }
     }
 
