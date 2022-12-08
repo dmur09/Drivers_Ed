@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class UI : MonoBehaviour
 {
     public CanvasGroup StartScreenCanvasGroup;
-    // public CanvasGroup GameOverScreenCanvasGroup;
+    public CanvasGroup GameOverScreenCanvasGroup;
     public Text ScoreText;
     public Text TimeText;
     public Text DamageGaugeText;
@@ -23,19 +23,18 @@ public class UI : MonoBehaviour
     public void ShowStartScreen()
     {
         CanvasGroupDisplayer.Show(StartScreenCanvasGroup);
-        //CanvasGroupDisplayer.Hide(GameOverScreenCanvasGroup);
+        CanvasGroupDisplayer.Hide(GameOverScreenCanvasGroup);
     }
-    //
-    // public void ShowGameOverScreen()
-    // {
-    //     CanvasGroupDisplayer.Hide(StartScreenCanvasGroup);
-    //     CanvasGroupDisplayer.Show(GameOverScreenCanvasGroup);
-    // }
-    //
+
+    public void ShowGameOverScreen()
+    {
+        CanvasGroupDisplayer.Hide(StartScreenCanvasGroup);
+        CanvasGroupDisplayer.Show(GameOverScreenCanvasGroup);
+    }
     public void HideStartAndGameOverScreen()
     {
         CanvasGroupDisplayer.Hide(StartScreenCanvasGroup);
-        //CanvasGroupDisplayer.Hide(GameOverScreenCanvasGroup);
+        CanvasGroupDisplayer.Hide(GameOverScreenCanvasGroup);
     }
 
     public void ShowScore(string score)

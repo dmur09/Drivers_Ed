@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameMonoWrapper : MonoBehaviour
 {
     public UI UI;
+    public GameObject MiniMap;
     public GameTimer GameTimer;
     void Start()
     {
@@ -22,5 +23,6 @@ public class GameMonoWrapper : MonoBehaviour
     public void StartGame()
     {
         Game.StartGame();
+        MiniMap.SetActive(true);
     }
 }
