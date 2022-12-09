@@ -12,6 +12,8 @@ TagManager:
   - Gold Coin
   - Cone
   - GuardRail
+  - AudioSource
+  - Silver Coin
   layers:
   - Default
   - TransparentFX

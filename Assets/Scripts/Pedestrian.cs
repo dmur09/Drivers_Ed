@@ -6,7 +6,6 @@ using UnityEngine;
 public class Pedestrian : MonoBehaviour
 {
     public GameObject ObjectPrefab;
-    public Crosswalk Crosswalk;
     public void Update()
     {
         if (Crosswalk.isCrosswalk == true)

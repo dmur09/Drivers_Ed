@@ -4,25 +4,42 @@ using UnityEngine;
 
 public class PlaceAtStart : MonoBehaviour
 {
-    public void Place(SpriteRenderer Mushroom, SpriteRenderer Beer, SpriteRenderer Redbull,
+    public void Place(SpriteRenderer Mushroom1, SpriteRenderer Mushroom2, SpriteRenderer Mushroom3, SpriteRenderer Beer1, SpriteRenderer Beer2, 
+        SpriteRenderer Beer3, SpriteRenderer PotLeaf1, SpriteRenderer PotLeaf2, SpriteRenderer PotLeaf3, SpriteRenderer Redbull1, SpriteRenderer Redbull2, 
+        SpriteRenderer Redbull3, SpriteRenderer GoldCoin1, SpriteRenderer GoldCoin2, SpriteRenderer GoldCoin3, SpriteRenderer GoldCoin4, SpriteRenderer GoldCoin5, SpriteRenderer SilverCoin, 
         List<SpriteRenderer> Shapes)
     {
-        PlaceItemRandomlyInRandomShape(Mushroom, Shapes);
-        PlaceItemRandomlyInRandomShape(Beer, Shapes);
-        PlaceItemRandomlyInRandomShape(Redbull, Shapes);
+        PlaceItemRandomlyInRandomShape(Mushroom1, Shapes);
+        PlaceItemRandomlyInRandomShape(Mushroom2, Shapes);
+        PlaceItemRandomlyInRandomShape(Mushroom3, Shapes);
+        PlaceItemRandomlyInRandomShape(Beer1, Shapes);
+        PlaceItemRandomlyInRandomShape(Beer2, Shapes);
+        PlaceItemRandomlyInRandomShape(Beer3, Shapes);
+        PlaceItemRandomlyInRandomShape(PotLeaf1, Shapes);
+        PlaceItemRandomlyInRandomShape(PotLeaf2, Shapes);
+        PlaceItemRandomlyInRandomShape(PotLeaf3, Shapes);
+        PlaceItemRandomlyInRandomShape(Redbull1, Shapes);
+        PlaceItemRandomlyInRandomShape(Redbull2, Shapes);
+        PlaceItemRandomlyInRandomShape(Redbull3, Shapes);
+        PlaceItemRandomlyInRandomShape(GoldCoin1, Shapes);
+        PlaceItemRandomlyInRandomShape(GoldCoin2, Shapes);
+        PlaceItemRandomlyInRandomShape(GoldCoin3, Shapes);
+        PlaceItemRandomlyInRandomShape(GoldCoin4, Shapes);
+        PlaceItemRandomlyInRandomShape(GoldCoin5, Shapes);
+        PlaceItemRandomlyInRandomShape(SilverCoin, Shapes);
+        //PlaceItemInCenterOfRandomShape(Crosswalk, Shapes);
     }   
 
     public void PlaceItemRandomlyInRandomShape(SpriteRenderer objectToPlace, List<SpriteRenderer> shapesToPlaceIn)
     {
         SpriteRenderer areaShape = PickRandomShape(shapesToPlaceIn);
-        //objectToPlace.transform.position = GetRandomPositionInShape(areaShape);
         Instantiate(objectToPlace, GetRandomPositionInShape(areaShape), Quaternion.identity);
     }
     
     public void PlaceItemInCenterOfRandomShape(SpriteRenderer objectToPlace, List<SpriteRenderer> shapesToPlaceIn)
     {
         SpriteRenderer areaShape = PickRandomShape(shapesToPlaceIn);
-        objectToPlace.transform.position = GetCenterPositionInShape(areaShape);
+        Instantiate(objectToPlace, GetCenterPositionInShape(areaShape), Quaternion.identity);
     }
 
     private SpriteRenderer PickRandomShape(List<SpriteRenderer> shapesToPlaceIn)

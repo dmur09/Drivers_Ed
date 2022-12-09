@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Crosswalk : RandomObjectPlacer
+public static class Crosswalk
 {
-    public bool isCrosswalk = false;
+    public static bool isCrosswalk = false;
 }
