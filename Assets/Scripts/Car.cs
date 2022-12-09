@@ -129,6 +129,14 @@ public class Car : MonoBehaviour
 
     }
 
+    public void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "FinishLine")
+        {
+            ScoreKeeper.Add(1);
+        }
+    }
+
     private void SlowDown()
     {
         if (acceleration > GameParameters.MaxForwardSpeed)
