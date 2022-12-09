@@ -6,6 +6,9 @@ using UnityEngine;
 public class Pedestrian : MonoBehaviour
 {
     public GameObject ObjectPrefab;
+    private float direction = 1;
+    public float upperYLimit;
+    public float lowerYLimit;
     public void Update()
     {
         if (Crosswalk.isCrosswalk == true)
@@ -29,5 +32,22 @@ public class Pedestrian : MonoBehaviour
         return Vector3.back;
     }
 
+    void FixedUpdate() //pedestrian moves up and down
+    {
+        if (Game.IsRunning())
+        {
+            ObjectPrefab.transform.Translate(new Vector2(0f, 0.1f*direction));
+        }
+
+        if (ObjectPrefab.transform.position.y > upperYLimit)
+        {
+            direction *= -1;
+        }
+
+        if (ObjectPrefab.transform.position.y < lowerYLimit)
+        {
+            direction *= -1;
+        }
+    }
 
 }

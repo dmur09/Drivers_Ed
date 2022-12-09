@@ -90,7 +90,7 @@ public class Car : MonoBehaviour
             Sounds.PlayJailSound();
             //GoToJail();
             DamageGauge.Minus(5);
-            Destroy(col.gameObject);
+            Game.EndGame();
         }
         
         if (col.gameObject.tag == "GuardRail")
@@ -157,7 +157,7 @@ public class Car : MonoBehaviour
 
     private void SpeedUp()
     {
-        acceleration = 60.0f;
+        acceleration = 80.0f;
     }
     IEnumerator WaitForSpeedBuffToEnd()
     {
