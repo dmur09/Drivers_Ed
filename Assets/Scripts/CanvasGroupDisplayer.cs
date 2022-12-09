@@ -18,3 +18,4 @@ public static class CanvasGroupDisplayer
         canvasGroup.blocksRaycasts = false;
     }
 }
+

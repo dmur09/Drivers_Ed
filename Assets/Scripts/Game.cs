@@ -6,7 +6,7 @@ public static class Game
 {
     public static UI UI;
     public static GameTimer GameTimer;
-     
+
     private static bool isRunning = false;
 
     public static void Initialize(UI ui, GameTimer gameTimer)
@@ -30,7 +30,6 @@ public static class Game
     {
         isRunning = true;
         UI.HideStartAndGameOverScreen();
-
 
         ScoreKeeper.Reset();
         

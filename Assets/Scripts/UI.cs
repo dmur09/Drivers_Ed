@@ -11,12 +11,11 @@ public class UI : MonoBehaviour
     public Text ScoreText;
     public Text TimeText;
     public Text DamageGaugeText;
-    public Text FinalScoreText;
     public GameTimer GameTimer;
 
     public void Update()
-    { 
-        ShowScore(ScoreKeeper.GetScore()); 
+    {
+        ShowScore(ScoreKeeper.GetScore());
         ShowDamageGuage(DamageGauge.GetDamage());
         ShowTime(GameTimer.GetTimeAsString());
     }
@@ -26,13 +25,13 @@ public class UI : MonoBehaviour
         CanvasGroupDisplayer.Show(StartScreenCanvasGroup);
         CanvasGroupDisplayer.Hide(GameOverScreenCanvasGroup);
     }
-
+    
     public void ShowGameOverScreen()
     {
         CanvasGroupDisplayer.Hide(StartScreenCanvasGroup);
         CanvasGroupDisplayer.Show(GameOverScreenCanvasGroup);
-        ShowFinalScore(ScoreKeeper.GetScore());
     }
+    
     public void HideStartAndGameOverScreen()
     {
         CanvasGroupDisplayer.Hide(StartScreenCanvasGroup);
@@ -46,17 +45,12 @@ public class UI : MonoBehaviour
 
     public void ShowDamageGuage(string damage)
     {
-        DamageGaugeText.text = "Hits: " + damage + "/10";
+        DamageGaugeText.text = "Hits Remaining: " + damage;
     }
 
     public void ShowTime(string time)
     {
         TimeText.text = "Time: " + time;
-    }
-
-    public void ShowFinalScore(string score)
-    {
-        FinalScoreText.text = "Final Score: " + score;
     }
 }
 
