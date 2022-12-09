@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,10 +8,14 @@ public class GameMonoWrapper : MonoBehaviour
     public UI UI;
     public GameObject MiniMap;
     public GameTimer GameTimer;
+    public Sounds Sounds;
+    
+
     void Start()
     {
         Game.Initialize(UI, GameTimer);
         MiniMap.SetActive(false);
+        Sounds.PlayStart();
     }
     
     void Update()
@@ -19,6 +24,7 @@ public class GameMonoWrapper : MonoBehaviour
         {
             Game.EndGame();
             MiniMap.SetActive(false);
+            Sounds.PlayGameOver();
         }
     }
 
@@ -26,5 +32,6 @@ public class GameMonoWrapper : MonoBehaviour
     {
         Game.StartGame();
         MiniMap.SetActive(true);
+        Sounds.StopStartSound();
     }
 }

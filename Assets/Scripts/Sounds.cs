@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Sounds : MonoBehaviour
 {
-    //public AudioClip GameStartSound;
+    public AudioClip GameStartSound;
     public AudioClip GameOverSound;
     public AudioClip BeerSound;
     public AudioClip RedbullSound;
@@ -18,15 +18,22 @@ public class Sounds : MonoBehaviour
     public AudioClip LapSound;
     private AudioSource audioSource;
 
-    void Start()
+    void Awake()
     {
         audioSource = GameObject.FindGameObjectWithTag("AudioSource").GetComponent<AudioSource>();
     }
     
-    /* public void PlayStart()
+    public void PlayStart()
     {
+        //audioSource.loop = true;
+        //audioSource.playOnAwake = true;
         audioSource.PlayOneShot(GameStartSound);
-    }*/
+    }
+
+    public void StopStartSound()
+    {
+        audioSource.Stop();
+    }
 
     public void PlayGameOver()
     {
