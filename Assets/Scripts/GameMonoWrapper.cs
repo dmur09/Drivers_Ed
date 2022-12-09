@@ -9,7 +9,6 @@ public class GameMonoWrapper : MonoBehaviour
     void Start()
     {
         Game.Initialize(UI, GameTimer);
-        Game.StartGame();
     }
     
     void Update()
@@ -20,8 +19,8 @@ public class GameMonoWrapper : MonoBehaviour
         }
     }
 
-    // public void StartGame()
-    // {
-    //     Game.StartGame();
-    // }
+    public void StartGame()
+    {
+        Game.StartGame();
+    }
 }
