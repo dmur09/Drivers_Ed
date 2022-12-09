@@ -133,7 +133,9 @@ public class Car : MonoBehaviour
     {
         if (col.gameObject.tag == "FinishLine")
         {
-            ScoreKeeper.Add(1);
+            GameParameters.Laps++;
+            if (GameParameters.Laps == 3)
+                Game.EndGame();
         }
     }
 
