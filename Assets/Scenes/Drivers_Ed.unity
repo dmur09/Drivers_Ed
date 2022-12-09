@@ -3660,6 +3660,7 @@ MonoBehaviour:
   ScoreText: {fileID: 800630210}
   TimeText: {fileID: 160817630}
   DamageGaugeText: {fileID: 1975251329}
+  FinalScoreText: {fileID: 1853265886}
   GameTimer: {fileID: 555761416}
 --- !u!4 &1180222652
 Transform:
