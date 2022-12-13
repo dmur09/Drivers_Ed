@@ -25,10 +25,24 @@ public class PlacePickupsAndObs : MonoBehaviour
     public SpriteRenderer SilverCoin;
     //public SpriteRenderer Crosswalk;
     public List<SpriteRenderer> Shapes; 
+    public GameObject ObjectPrefab;
     
     void Start()
     {
         PlaceAtStart.Place(Mushroom1, Mushroom2, Mushroom3, Beer1, Beer2, Beer3, PotLeaf1, PotLeaf2, PotLeaf3, Redbull1, 
             Redbull2, Redbull3, GoldCoin1, GoldCoin2, GoldCoin3, GoldCoin4, GoldCoin5, SilverCoin, Shapes);
+    }
+
+    public void Reset()
+    {
+        DeleteAllObjects();
+    }
+    
+    private void DeleteAllObjects()
+    {
+        foreach (GameObject objectToDelete in GameObject.FindGameObjectsWithTag(ObjectPrefab.tag))
+        {
+            Destroy(objectToDelete);
+        }
     }
 }

@@ -12,10 +12,11 @@ public class Car : MonoBehaviour
     public Sounds Sounds;
 
     public bool isDrunk = false;
+    //add a boolean to that is set to true if start button has been clicked
 
     void Update()
     {
-        if (HasGameJustEnded())
+        if (HasGameJustEnded()) //add a check as well
         {
             Reset();
         }
@@ -35,7 +36,18 @@ public class Car : MonoBehaviour
 
     public void Reset()
     {
+        ResetPosition();
+        isDrunk = false;
         acceleration = 0.0f;
+    }
+    
+    private void ResetPosition()
+    {
+        // print("reset");
+        CarSpriteRenderer.transform.position = new Vector3(0f, 0f, 0f);
+        // CarSpriteRenderer.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+        // CarSpriteRenderer.transform.rotation = new Quaternion(0f, 0f, 90f, 0f);
+
     }
     
     public void MoveManually(Vector2 direction)
