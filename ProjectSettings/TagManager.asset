@@ -14,6 +14,7 @@ TagManager:
   - GuardRail
   - AudioSource
   - Silver Coin
+  - FinishLine
   layers:
   - Default
   - TransparentFX

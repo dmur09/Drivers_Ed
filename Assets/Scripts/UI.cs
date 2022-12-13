@@ -13,12 +13,14 @@ public class UI : MonoBehaviour
     public Text DamageGaugeText;
     public Text FinalScoreText;
     public GameTimer GameTimer;
+    public Text Laps;
 
     public void Update()
     {
         ShowScore(ScoreKeeper.GetScore());
         ShowDamageGuage(DamageGauge.GetDamage());
         ShowTime(GameTimer.GetTimeAsString());
+        ShowLaps();
     }
 
     public void ShowStartScreen()
@@ -58,6 +60,11 @@ public class UI : MonoBehaviour
     public void ShowFinalScore(string score)
     {
         FinalScoreText.text = "Final Score: " + score;
+    }
+
+    public void ShowLaps()
+    {
+        Laps.text = "Laps: " + GameParameters.Laps;
     }
 }
 
