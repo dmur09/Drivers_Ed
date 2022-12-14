@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class GameMonoWrapper : MonoBehaviour
 {
+    public Car Car;
     public UI UI;
     public GameObject MiniMap;
     public GameTimer GameTimer;
     public Sounds Sounds;
-    
+
 
     void Start()
     {
@@ -23,13 +24,16 @@ public class GameMonoWrapper : MonoBehaviour
         if (Game.GameJustEnded() || DamageGauge.damage <= 0)
         {
             Game.EndGame();
+            Car.ResetRotation();
             MiniMap.SetActive(false);
             Sounds.PlayGameOver();
+            ScoreKeeper.Reset();
         }
     }
 
     public void StartGame()
     {
+        Car.SetRotation();
         Game.StartGame();
         MiniMap.SetActive(true);
         Sounds.StopStartSound();

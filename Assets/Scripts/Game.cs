@@ -7,7 +7,6 @@ public static class Game
     public static UI UI;
     public static GameTimer GameTimer;
     public static PlacePickupsAndObs PlacePickupsAndObs;
-
     private static bool isRunning = false;
 
     public static void Initialize(UI ui, GameTimer gameTimer)
@@ -33,6 +32,7 @@ public static class Game
         isRunning = true;
         UI.HideStartAndGameOverScreen();
         ScoreKeeper.Reset();
+        GameParameters.Laps = 0;
 
         //change this for game time length
         GameTimer.StartTimer(600);

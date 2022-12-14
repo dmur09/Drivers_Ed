@@ -10,13 +10,11 @@ public class Car : MonoBehaviour
     public float deceleration = 0.0f;
     public ParticleSystem Exhaust;
     public Sounds Sounds;
-
     public bool isDrunk = false;
-    //add a boolean to that is set to true if start button has been clicked
 
     void Update()
     {
-        if (HasGameJustEnded()) //add a check as well
+        if (HasGameJustEnded())
         {
             Reset();
         }
@@ -37,17 +35,26 @@ public class Car : MonoBehaviour
     public void Reset()
     {
         ResetPosition();
+        ResetRotation();
         isDrunk = false;
         acceleration = 0.0f;
+        DamageGauge.Replenish();
     }
     
     private void ResetPosition()
     {
-        // print("reset");
         CarSpriteRenderer.transform.position = new Vector3(0f, 0f, 0f);
-        // CarSpriteRenderer.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-        // CarSpriteRenderer.transform.rotation = new Quaternion(0f, 0f, 90f, 0f);
 
+    }
+
+    public void ResetRotation()
+    {
+        CarSpriteRenderer.transform.rotation = Quaternion.identity;
+    }
+
+    public void SetRotation()
+    {
+        CarSpriteRenderer.transform.Rotate(0, 0, 90);
     }
     
     public void MoveManually(Vector2 direction)
@@ -101,7 +108,7 @@ public class Car : MonoBehaviour
         {
             Sounds.PlayJailSound();
             //GoToJail();
-            DamageGauge.Minus(5);
+            //DamageGauge.Minus(5);
             Game.EndGame();
         }
         
@@ -109,6 +116,10 @@ public class Car : MonoBehaviour
         {
             Sounds.PlayGuardRailSound();
             DamageGauge.Minus(1);
+            if (DamageGauge.damage <= 0)
+            {
+                Game.EndGame();
+            }
         }
         
         if (col.gameObject.tag == "Silver Coin")
