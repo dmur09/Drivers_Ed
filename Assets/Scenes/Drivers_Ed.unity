@@ -2877,6 +2877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b5ef3111235747b5ab618df66b086c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Car: {fileID: 1889416457}
   UI: {fileID: 1180222651}
   MiniMap: {fileID: 1566433110}
   GameTimer: {fileID: 555761416}
@@ -4744,7 +4745,6 @@ MonoBehaviour:
   Exhaust: {fileID: 2014587301}
   Sounds: {fileID: 921670612}
   isDrunk: 0
-  OriginalRotationValue: 0
 --- !u!60 &1889416458
 PolygonCollider2D:
   m_ObjectHideFlags: 0
