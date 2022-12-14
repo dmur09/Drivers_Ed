@@ -38,6 +38,7 @@ public class Car : MonoBehaviour
         ResetRotation();
         isDrunk = false;
         acceleration = 0.0f;
+        deceleration = 0.0f;
         DamageGauge.Replenish();
     }
     
