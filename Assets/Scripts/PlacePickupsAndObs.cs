@@ -23,14 +23,16 @@ public class PlacePickupsAndObs : MonoBehaviour
     public SpriteRenderer GoldCoin4;
     public SpriteRenderer GoldCoin5;
     public SpriteRenderer SilverCoin;
-    //public SpriteRenderer Crosswalk;
+    public SpriteRenderer StopSign1;
+    public SpriteRenderer StopSign2;
+    public SpriteRenderer StopSign3;
     public List<SpriteRenderer> Shapes; 
     public GameObject ObjectPrefab;
     
     void Start()
     {
         PlaceAtStart.Place(Mushroom1, Mushroom2, Mushroom3, Beer1, Beer2, Beer3, PotLeaf1, PotLeaf2, PotLeaf3, Redbull1, 
-            Redbull2, Redbull3, GoldCoin1, GoldCoin2, GoldCoin3, GoldCoin4, GoldCoin5, SilverCoin, Shapes);
+            Redbull2, Redbull3, GoldCoin1, GoldCoin2, GoldCoin3, GoldCoin4, GoldCoin5, SilverCoin, StopSign1, StopSign2, StopSign3, Shapes);
     }
 
     public void Reset()

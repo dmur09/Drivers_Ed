@@ -36,6 +36,16 @@ public static class ScoreKeeper
     {
         return finalScore.ToString();
     }
+    
+    public static int GetFinalScoreAsInt()
+    {
+        return finalScore;
+    }
+    
+    public static void SetFinalScore(int amount)
+    {
+        finalScore = amount;
+    }
 
     public static void Reset()
     {

@@ -7,7 +7,7 @@ using UnityEngine;
 public class GameTimer : MonoBehaviour
 {
     private bool isStopped = true;
-    private int timeRemaining = 0;
+    public int timeRemaining = 0;
 
     public void StartTimer(int durationInSeconds)
     {
