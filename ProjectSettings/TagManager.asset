@@ -15,6 +15,7 @@ TagManager:
   - AudioSource
   - Silver Coin
   - FinishLine
+  - StopSign
   layers:
   - Default
   - TransparentFX

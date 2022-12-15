@@ -140,7 +140,7 @@ public class Car : MonoBehaviour
         if (col.gameObject.tag == "StopSign")
         {
             StopAtSign();
-            StartCoroutine(GoFromSign());
+            StartCoroutine(WaitToGoFromSign());
             DamageGauge.Minus(1); 
             Destroy(col.gameObject);
         }
@@ -176,7 +176,7 @@ public class Car : MonoBehaviour
 
     }
     
-    IEnumerator GoFromSign()
+    IEnumerator WaitToGoFromSign()
     {
         yield return new WaitForSeconds(1);
         GameParameters.CarMoveAmount = 0.015f;

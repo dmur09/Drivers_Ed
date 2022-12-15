@@ -45,6 +45,10 @@ public static class Game
         GameTimer.StopTimer();
         ScoreKeeper.AddToFinal(ScoreKeeper.GetScoreAsInt());
         ScoreKeeper.TakeFromFinal((10 - DamageGauge.GetDamageAsInt()));
+        if (ScoreKeeper.GetFinalScoreAsInt() < 0)
+        {
+            ScoreKeeper.SetFinalScore(0);
+        }
         UI.ShowGameOverScreen();
     }
 
