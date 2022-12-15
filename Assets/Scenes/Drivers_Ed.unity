@@ -3023,13 +3023,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01d505e175e674c3282864fd83e02a72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameStartSound: {fileID: 8300000, guid: d366686bb8e3b471cb849d4bcd97a0b8, type: 3}
+  GameStartSound: {fileID: 8300000, guid: 952d8d1f1a9f74d0c81766fe0d60e808, type: 3}
   GameOverSound: {fileID: 8300000, guid: aa0415b7d4ae644fda08fb5c084ca736, type: 3}
   BeerSound: {fileID: 8300000, guid: a61d1c47daf11406ca0e3da0894b50d2, type: 3}
   RedbullSound: {fileID: 8300000, guid: 8d5cca0707c174c11b6d7beeb61283ad, type: 3}
   WeedSound: {fileID: 8300000, guid: 68b039c8a7310439591cd785ee87459f, type: 3}
-  MushroomSound: {fileID: 8300000, guid: a8d55ec18b4af48cd988ccd1c82db252, type: 3}
-  GuardRailSound: {fileID: 8300000, guid: f6cd5c93449d947b4841d68c174e18ad, type: 3}
+  MushroomSound: {fileID: 8300000, guid: 62400c9fe95c04af596b391420b708be, type: 3}
+  GuardRailSound: {fileID: 8300000, guid: 6ccedcea5bbb64b568e298b9176abbfd, type: 3}
   CoinSound: {fileID: 8300000, guid: 4b71bf5df5b674ba3a4fd93d9e814e00, type: 3}
   ConstructionSound: {fileID: 8300000, guid: ff5b7279a59d14d20a7981ee3ceeca04, type: 3}
   StopSignSound: {fileID: 8300000, guid: a071357baeed44e1190dc6736aa89163, type: 3}

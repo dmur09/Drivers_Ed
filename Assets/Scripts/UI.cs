@@ -64,7 +64,7 @@ public class UI : MonoBehaviour
 
     public void ShowLaps()
     {
-        Laps.text = "Laps: " + GameParameters.Laps;
+        Laps.text = "Lap: " + GameParameters.Laps;
     }
 }
 
