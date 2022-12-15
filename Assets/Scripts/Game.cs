@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 public static class Game
@@ -20,10 +21,9 @@ public static class Game
     {
         if (!GameTimer.IsRunning() && isRunning)
         {
-            Debug.Log("game ended");
+            //Debug.Log("game ended");
             return true;
         }
-
         return false;
     }
 
@@ -32,16 +32,19 @@ public static class Game
         isRunning = true;
         UI.HideStartAndGameOverScreen();
         ScoreKeeper.Reset();
+        DamageGauge.Replenish();
         GameParameters.Laps = 0;
 
         //change this for game time length
-        GameTimer.StartTimer(600);
+        GameTimer.StartTimer(120);
     }
 
     public static void EndGame()
     {
         isRunning = false;
         GameTimer.StopTimer();
+        ScoreKeeper.AddToFinal(ScoreKeeper.GetScoreAsInt());
+        ScoreKeeper.TakeFromFinal((10 - DamageGauge.GetDamageAsInt()));
         UI.ShowGameOverScreen();
     }
 

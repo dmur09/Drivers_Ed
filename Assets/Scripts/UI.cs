@@ -33,7 +33,7 @@ public class UI : MonoBehaviour
     {
         CanvasGroupDisplayer.Hide(StartScreenCanvasGroup);
         CanvasGroupDisplayer.Show(GameOverScreenCanvasGroup);
-        ShowFinalScore(ScoreKeeper.GetScore());
+        ShowFinalScore(ScoreKeeper.GetFinalScore());
     }
     
     public void HideStartAndGameOverScreen()
@@ -57,9 +57,9 @@ public class UI : MonoBehaviour
         TimeText.text = "Time: " + time;
     }
     
-    public void ShowFinalScore(string score)
+    public void ShowFinalScore(string finalScore)
     {
-        FinalScoreText.text = "Final Score: " + score;
+        FinalScoreText.text = "Final Score: " + finalScore;
     }
 
     public void ShowLaps()

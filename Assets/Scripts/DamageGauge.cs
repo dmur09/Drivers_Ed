@@ -16,6 +16,11 @@ public static class DamageGauge
         return damage.ToString();
     }
     
+    public static int GetDamageAsInt()
+    {
+        return damage;
+    }
+    
     public static void Replenish()
     {
         damage = 10;
