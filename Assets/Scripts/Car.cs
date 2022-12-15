@@ -137,20 +137,13 @@ public class Car : MonoBehaviour
             Destroy(col.gameObject);
         }
 
-        /*if (col.gameObject.tag == “StopSign”)
+        if (col.gameObject.tag == "StopSign")
         {
             StopAtSign();
+            StartCoroutine(GoFromSign());
             DamageGauge.Minus(1); 
+            Destroy(col.gameObject);
         }
-    
-        if (col.gameObject.tag == “Construction”)
-        {
-            StopAtConstruction();
-            DamageGauge.Minus(1); 
-        }
-    
-         */
-
     }
 
     public void OnTriggerEnter2D(Collider2D col)
@@ -161,6 +154,11 @@ public class Car : MonoBehaviour
             if (GameParameters.Laps == 3)
                 Game.EndGame();
         }
+    }
+
+    private void StopAtSign()
+    {
+        GameParameters.CarMoveAmount = 0;
     }
 
     private void SlowDown()
@@ -175,6 +173,13 @@ public class Car : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         GameParameters.MaxForwardSpeed = 28.0f;
+
+    }
+    
+    IEnumerator GoFromSign()
+    {
+        yield return new WaitForSeconds(1);
+        GameParameters.CarMoveAmount = 0.015f;
 
     }
 
