@@ -152,7 +152,10 @@ public class Car : MonoBehaviour
         {
             GameParameters.Laps++;
             if (GameParameters.Laps == 3)
+            {
+                ScoreKeeper.AddToFinal(Game.GameTimer.timeRemaining / 10);
                 Game.EndGame();
+            }
         }
     }
 
